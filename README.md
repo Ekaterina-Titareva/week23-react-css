@@ -1,3 +1,6 @@
+#github-pages
+https://ekaterina-titareva.github.io/week23-react-css/
+
 <img src="./src/cards.jpg" height="300"/>
 
 # Getting Started with Create React App
