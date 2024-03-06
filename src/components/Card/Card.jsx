@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './card.module.css'
 
 
 
-function Card({name, price, speed, volume, nameColor, priceColor, transform, margin}) {
+function Card({name, price, speed, volume, nameColor, priceColor}) {
+    const [isClicked, setIsClicked] = useState(false);
     const nameStyle = {
         backgroundColor: nameColor
     }
@@ -12,14 +13,19 @@ function Card({name, price, speed, volume, nameColor, priceColor, transform, mar
         backgroundColor: priceColor
     }
 
-    const cardStyle = {
-        transform: transform,
-        margin: margin
-    }
+    const selectedCard = {
+    transform: isClicked ? 'scale(1.1)' : 'none',
+    padding: isClicked ? '0px 4px' : '0',
+    };
 
+const handleClick = () => {
+    setIsClicked(!isClicked);
+    };
+
+    
 
     return (
-        <div className={styles.card} style={cardStyle}>
+        <div className={styles.card} onClick={handleClick} style={selectedCard}>
             <div className={styles.name} style={nameStyle}>{name}</div>
             <div className={styles.price} style={priceStyle}>
                 <div className={styles.rub}>

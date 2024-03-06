@@ -25,9 +25,7 @@ const data = [
         speed: 100,
         volume: "Объем включенного трафика не ограничен",
         nameColor: "rgb(164 30 30)",
-        priceColor: "rgb(198 44 44)",
-        special: 'scale(1.03)',
-        margin: "0px 4px"
+        priceColor: "rgb(198 44 44)"
     },
     {
         name: "Безлимитный 1000",
@@ -53,8 +51,6 @@ function CatalogOfCards() {
                             volume={card.volume}
                             nameColor={card.nameColor}
                             priceColor={card.priceColor}
-                            transform={card.special}
-                            margin={card.margin}
                         />
                     ))
                 }
